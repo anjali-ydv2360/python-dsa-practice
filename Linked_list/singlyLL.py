@@ -21,6 +21,8 @@ class Singly_Linked_list:
             curr=curr.next
         curr.next=new_node
 
+# DISPLAY LL
+
     def display(self):
         curr=self.head
 
@@ -35,6 +37,19 @@ class Singly_Linked_list:
         new_node=Node(data)
         new_node.next=self.head
         self.head=new_node
+
+# INSERT AT THE INDEX
+
+    def insert_at(self,data,position):
+        new_node=Node(data)
+        if position==0:
+            new_node.next=self.head
+        curr=self.head
+        for _ in range(position-1):
+            curr=curr.next
+
+        new_node.next=curr.next
+        curr.next=new_node
 
 # SEARCH IN A SINGLY LINKED LIST
 
@@ -96,4 +111,5 @@ ll.insert_at_beginning(2)
 
 ll.search(6)
 
+ll.insert_at(1,3)
 ll.display()
